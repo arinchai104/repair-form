@@ -1,0 +1,43 @@
+<!-- request.html -->
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>แจ้งซ่อมงาน</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f2f2f2; margin: 0; padding: 20px; }
+  .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);}
+  h2 { text-align: center; color: #333; }
+  label { display: block; margin-top: 15px; color: #555; }
+  input, textarea { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; }
+  button { margin-top: 20px; width: 100%; background-color: #007bff; color: white; border: none; padding: 12px; font-size: 16px; border-radius: 4px; cursor: pointer; }
+  button:hover { background-color: #0056b3; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>📋 ฟอร์มแจ้งซ่อมงาน</h2>
+    <form action="https://formspree.io/f/xnndrkkl" method="POST" enctype="multipart/form-data">
+      <label>ชื่อผู้แจ้ง <span style="color:red;">*</span>
+        <input type="text" name="ชื่อผู้แจ้ง" required />
+      </label>
+      <label>เบอร์โทร <span style="color:red;">*</span>
+        <input type="tel" name="เบอร์โทร" required pattern="[0-9]{9,10}" placeholder="เช่น 0812345678" />
+      </label>
+      <label>สาขาที่แจ้งซ่อม <span style="color:red;">*</span>
+        <input type="text" name="สาขา" required />
+      </label>
+      <label>รายละเอียดงานซ่อม <span style="color:red;">*</span>
+        <textarea name="รายละเอียด" rows="4" required></textarea>
+      </label>
+      <label>แนบรูปภาพ (ถ้ามี)
+        <input type="file" name="รูปภาพ" accept="image/*" />
+      </label>
+      <!-- ซ่อนช่องส่งลิงก์ตอบกลับ (แจ้งผู้รับงาน) -->
+      <input type="hidden" name="ลิงก์ตอบกลับ" value="https://yourdomain.com/response.html" />
+      <button type="submit">ส่งแจ้งซ่อม</button>
+    </form>
+  </div>
+</body>
+</html>
