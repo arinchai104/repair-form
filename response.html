@@ -1,0 +1,41 @@
+<!-- response.html -->
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ตอบรับงานซ่อม</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #e6f2ff; margin: 0; padding: 20px; }
+  .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15);}
+  h2 { text-align: center; color: #333; }
+  label { display: block; margin-top: 15px; color: #555; }
+  input, textarea { width: 100%; padding: 8px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; }
+  button { margin-top: 20px; width: 100%; background-color: #28a745; color: white; border: none; padding: 12px; font-size: 16px; border-radius: 4px; cursor: pointer; }
+  button:hover { background-color: #1e7e34; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2>🛠️ ฟอร์มตอบรับงานซ่อม</h2>
+    <form action="https://formspree.io/f/xyzwvqrq" method="POST">
+      <label>ชื่อผู้รับงาน <span style="color:red;">*</span>
+        <input type="text" name="ชื่อผู้รับงาน" required />
+      </label>
+      <label>ระยะเวลาที่ใช้ (วัน) <span style="color:red;">*</span>
+        <input type="number" name="ระยะเวลา" required min="1" />
+      </label>
+      <label>ค่าใช้จ่ายเบื้องต้น (บาท) <span style="color:red;">*</span>
+        <input type="number" name="ค่าใช้จ่าย" required min="0" />
+      </label>
+      <label>ข้อความถึงผู้แจ้ง
+        <textarea name="ข้อความถึงผู้แจ้ง" rows="4"></textarea>
+      </label>
+      <label>อีเมลผู้แจ้ง (ใส่อีเมลนี้เพื่อส่งกลับ) <span style="color:red;">*</span>
+        <input type="email" name="emailผู้แจ้ง" required />
+      </label>
+      <button type="submit">ส่งตอบรับงาน</button>
+    </form>
+  </div>
+</body>
+</html>
